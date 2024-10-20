@@ -12,6 +12,6 @@ BEGIN
 	FROM corrections
 	INNER JOIN projects
 	ON projects.id = corrections.project_id
-	WHERE corrections.user_id = user.id);
+	WHERE corrections.user_id = users.id);
 END $$
 DELIMITER ;
