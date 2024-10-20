@@ -3,7 +3,7 @@
 -- a student 
 
 
-DELIMITER $$;
+DELIMITER $$
 
 DROP PROCEDURE IF EXISTS ComputerAverageScoreForUser;
 CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
