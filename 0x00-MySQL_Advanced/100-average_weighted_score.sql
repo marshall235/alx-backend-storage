@@ -3,7 +3,7 @@
 
 
 DELIMITER $$
-DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;;
+DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser (IN user_id INT)
 BEGIN
 	UPDATE users set average_score = (
