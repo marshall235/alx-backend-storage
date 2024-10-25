@@ -13,6 +13,7 @@ from function import wraps
 
 r = redis.Redis()
 
+
 def url_access(method):
     """
     Decorator for get_page function
@@ -36,11 +37,13 @@ def url_access(method):
 
     return wrapper
 
+
 @url_access_count
 def get_page(url: str) -> str:
     """ Obtain HTML CONTENT of a page"""
     results = requests.get(url)
     return results.text
+
 
 if __name__ = "__main__":
     get_page('http://slowwly.robertomurray.co.uk')
