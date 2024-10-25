@@ -75,7 +75,7 @@ def replay(fn: Callable):
         try:
             output = output.decode("utf-8")
         except Exception:
-              output = ""
+            output = ""
 
         print(f"{function_name}(*{input}) -> {output}")
 
