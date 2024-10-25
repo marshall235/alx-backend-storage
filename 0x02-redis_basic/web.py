@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Implimenting a get page function that uses
+Implementing a get page function that uses
 request module to obtain html content of a
 particular url and returns it
 """
@@ -34,6 +34,7 @@ def url_access_count(method):
 
         r.incr(key_count)
         r.set(key, html_content, ex=10)
+        r.exipire(key, 10)
         return html_content
 
     return wrapper
