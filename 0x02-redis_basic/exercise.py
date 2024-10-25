@@ -20,6 +20,7 @@ import uuid
 from typing import Callable, Optional, Union
 from functools import wraps
 
+
 def count_calls(method:  Callable) -> Callable:
     """ Returns a Callable """
     key = method.__qualname__
@@ -30,6 +31,7 @@ def count_calls(method:  Callable) -> Callable:
         return method(self, *args, **kwargs)
 
     return wrapper
+
 
 def call_history(method: Callable) -> Callable:
     """
