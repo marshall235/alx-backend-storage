@@ -6,22 +6,23 @@ particular url and returns it
 """
 
 
-import requests
+
 import redis
-from function import wraps
+import requests
+from functools import wraps
 
 
 r = redis.Redis()
 
 
-def url_access(method):
+def url_access_count(method):
     """
     Decorator for get_page function
     """
     @wraps(method)
     def wrapper(url):
         """Wrapper function"""
-        key = "cached:" + 1
+        key = "cached:" + url
         cached_value = r.get(key)
         if cached_value:
             return cached_value.decode("utf-8")
@@ -45,5 +46,5 @@ def get_page(url: str) -> str:
     return results.text
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     get_page('http://slowwly.robertomurray.co.uk')
