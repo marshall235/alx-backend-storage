@@ -77,7 +77,7 @@ def replay(fn: Callable):
             except Exception:
                 output = ""
 
-                print(f"{function_name}({input}) -> {output}")
+                print(f"{function_name}(*{input}) -> {output}")
 
 
 class Cache:
